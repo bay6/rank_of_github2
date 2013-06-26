@@ -7,6 +7,6 @@
 
 成员:
 - [@williamherry](https://github.com/williamherry)
-- [@Chris](https://github.com/chris)
+- [@Chris](https://github.com/biorainy)
 - [@RyanZhu1024](https://github.com/RyanZhu1024)
-- [@mouseshi](https://github.com/mouseshi)
+- [@mouseshi](https://github.com/mouse-lin)
