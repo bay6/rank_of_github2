@@ -12,7 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem "github_api"
+gem "octokit"
 
 group :development, :test do 
   gem "thin"

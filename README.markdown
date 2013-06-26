@@ -1,5 +1,20 @@
 ##github成员贡献统计和排名
 
+### Rank form two places
+
+  * repos
+    
+    - formula
+
+      followers + 1.5 * watchers + 2 * forks
+
+  * users
+
+    - formula:
+
+      待定...
+
+
 ###项目介绍
 
 队长:
