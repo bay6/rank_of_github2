@@ -9,7 +9,6 @@ class HomesController < ApplicationController
 
     @repos_list = @users.map do |user|
       repos = JSON.parse(open(user.repos_url).read)
-      binding.pry
       commit_count = repos.inject(0) do |sum, repo|
         num = JSON.parse(open(repo['commits_url'].gsub(/\{.*\}/,'')).read).count rescue 0
         sum += num 
