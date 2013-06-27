@@ -13,6 +13,9 @@ end
 
 gem 'jquery-rails'
 gem "octokit"
+gem "nokogiri"
+gem "kaminari"
+gem "resque"
 
 group :development, :test do 
   gem "thin"
