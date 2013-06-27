@@ -13,3 +13,7 @@ JSON.parse(open(user.repos_url).read)
 ```ruby
 JSON.parse(open(repos.first['commits_url'].gsub(/\{.*\}/,'')).read)
 ```
+
+#### V3
+
+http://developer.github.com/v3/
