@@ -1,9 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    @users = ["mouse-lin", "williamherry", "biorainy", "RyanZhu1024"].map do |user|
-      Octokit.user user
-    end
+    @users = User.page(params[:page]).per_page(30)
   end
 
 end
