@@ -8,3 +8,6 @@ http://developer.github.com/v3/search/
 ```ruby
 JSON.parse(open(user.repos_url).read)
 ```
+
+#### repo => commit
+JSON.parse(open(repos.first['commits_url'].gsub(/\{.*\}/,'')).read)
