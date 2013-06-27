@@ -1,0 +1,8 @@
+<% @users.each  do |user|%>
+  姓名： <%= user.name %><br>
+  账号： <%= user.login %><br>
+  头像: <%= image_tag user.avatar_url, width: "50"%><br>
+  followers: <%= user.followers %><br>
+  following: <%= user.following %><br>
+  location: <%= user.location %><br>
+<% end %>
