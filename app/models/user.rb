@@ -2,9 +2,9 @@ require 'open-uri'
 class User < ActiveRecord::Base
    has_many :contributes
 
-   # for 500 users
+   # for 1000 users
    def self.fetch_china_datas
-     @users = 5.times.collect { |page| search_users("location:china", page + 1) }.flatten
+     @users = 10.times.collect { |page| search_users("location:china", page + 1) }.flatten
      save_users
    end
 
@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
 
      def more_datas username
        doc = Nokogiri::HTML open("https://github.com/#{ username }")
-       contribute = doc.at(".contrib-day>.num").text.sub!(" Total", "").to_f
+       contribute = doc.at(".contrib-day>.num").text.sub!(" Total", "")
        avatar_url = doc.at(".avatared img")["src"]
        { contribute: contribute, avatar_url: avatar_url }
      end
