@@ -3,7 +3,6 @@
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
 gem 'slim'
 gem 'kaminari' #paginate
 gem 'bootstrap-sass'
@@ -19,8 +18,10 @@ gem "octokit"
 gem "nokogiri"
 gem "kaminari"
 gem "resque"
+gem 'pg', group: :production
 
 group :development, :test do 
+  gem 'sqlite3'
   gem 'pry-debugger'
   gem 'better_errors'
   gem 'binding_of_caller'
