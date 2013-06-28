@@ -1,5 +1,5 @@
-# source 'https://rubygems.org'
-source "http://ruby.taobao.org/"
+ source 'https://rubygems.org'
+#source "http://ruby.taobao.org/"
 
 gem 'rails', '3.2.13'
 
@@ -16,10 +16,13 @@ end
 
 gem 'jquery-rails'
 gem "octokit"
-gem 'pry-debugger', group: [:development, :test]
-gem 'better_errors',group:[:development,:test]
-gem 'binding_of_caller',group:[:development,:test]
+gem "nokogiri"
+gem "kaminari"
+gem "resque"
 
 group :development, :test do 
+  gem 'pry-debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem "thin"
 end
