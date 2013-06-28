@@ -1,0 +1,15 @@
+tr
+	td
+
+	td
+		= user.name||user.login
+	td
+		= user.login
+	td
+		= image_tag user.avatar_url,:class=>"img-rounded",:width=>"80"
+	td
+		= user.followers
+	td 
+		= user.following
+	td 
+		= user.location||"此人外星人,Unknow location"
