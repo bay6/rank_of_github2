@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130627090144) do
+ActiveRecord::Schema.define(:version => 20130628171846) do
 
   create_table "contributes", :force => true do |t|
     t.integer  "user_id"
-    t.float    "score"
+    t.string   "score"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
