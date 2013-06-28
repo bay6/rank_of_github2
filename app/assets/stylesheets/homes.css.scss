@@ -1,3 +1,22 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{ 
+  background-color: #fffffb;
+  background-image: image-url("bg.png");
+}
+
+tbody{ 
+  counter-reset:sectioncounter;
+}
+
+.sort-id:before {
+   content:counter(sectioncounter);
+   counter-increment:sectioncounter;
+}
+
+.container{ 
+  margin-top: 60px;
+}

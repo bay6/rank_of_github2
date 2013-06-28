@@ -1,12 +1,14 @@
 <div class="container">
-	<table class="table table-striped">
+	<table class="table table-bordered">
 		<th>
-			<td>姓名</td>
+			<td width="100">姓名</td>
 			<td>帐号</td>
-			<td>头像</td>
 			<td>Followers</td>
 			<td>Following</td>
-			<td>Location</td>
+			<td width="120">Location</td>
+      <td>language</td>
+      <td>Contributes</td>
+			<td width="80">头像</td>
 		</th>
 		<tbody>
 			<% @users.each do |user| %>
@@ -14,7 +16,4 @@
 			<% end %>
 		</tbody>
 	</table>
-  <center>
-    <%= paginate @users, windows: 4 %>
-  </center>
 </div>

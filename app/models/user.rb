@@ -14,12 +14,17 @@ class User < ActiveRecord::Base
      save_users
    end
 
+   def contributes_score
+     contributes.try(:last).try(:score)
+   end
+
    private
 
    class << self
 
      def save_users
        @users.each do |user|
+         user.id.sub!("user-", "")
          exist_user = User.find_by_github_id user.id
          user.merge! more_datas user.username
          params = { 
@@ -32,7 +37,6 @@ class User < ActiveRecord::Base
            location: user.location,
            language: user.language,
            username: user.username,
-           score: user.score,
            following: user.following
          }
          if exist_user
