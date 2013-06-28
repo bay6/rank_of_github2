@@ -1,9 +1,11 @@
-#source 'https://rubygems.org'
-source "http://ruby.taobao.org/"
+ source 'https://rubygems.org'
+#source "http://ruby.taobao.org/"
 
 gem 'rails', '3.2.13'
 
-gem 'sqlite3'
+gem 'slim'
+gem 'kaminari' #paginate
+gem 'bootstrap-sass'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -16,7 +18,15 @@ gem "octokit"
 gem "nokogiri"
 gem "kaminari"
 gem "resque"
+group :production do
+  gem 'pg' 
+  gem 'unicorn'
+end
 
 group :development, :test do 
+  gem 'sqlite3'
+  gem 'pry-debugger'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem "thin"
 end

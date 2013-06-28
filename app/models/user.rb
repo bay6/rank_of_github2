@@ -1,3 +1,4 @@
+require 'open-uri'
 class User < ActiveRecord::Base
    has_many :contributes
 
@@ -43,6 +44,29 @@ class User < ActiveRecord::Base
       keyword ||= "followers:>0"
       Octokit.search_users keyword, { sort: "followers", order: "desc", start_page: page, force_urlencoded: true } 
     end
+
+    #TODO for fetch and get all user's commit 
+    def get_commit
+      @users = ["mouse-lin", "williamherry", "biorainy", "RyanZhu1024"].map do |user|
+        @client.user user
+      end
+
+      @repos_list = @users.map do |user|
+        repos = JSON.parse(open(user.repos_url).read)
+        commit_count = repos.inject(0) do |sum, repo|
+          num = JSON.parse(open(repo['commits_url'].gsub(/\{.*\}/,'')).read).count rescue 0
+          sum += num 
+          #TODO please add commit commits.first['commit']['committer']['date']
+        end
+        {user: user, commit_count: commit_count}
+      end
+    end
+
+    def generate_client
+      @client = Octokit::Client.new(:login => "ken0", :password => "password9")
+    end
+
+
 
    end
 

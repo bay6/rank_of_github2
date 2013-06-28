@@ -1,8 +1,17 @@
-<% @users.each  do |user|%>
-  姓名： <%= user.name %><br>
-  账号： <%= user.login %><br>
-  头像: <%= image_tag user.avatar_url, width: "50"%><br>
-  followers: <%= user.followers %><br>
-  following: <%= user.following %><br>
-  location: <%= user.location %><br>
-<% end %>
+<div>
+	<table class="table table-striped">
+		<th>
+			<td>姓名</td>
+			<td>帐号</td>
+			<td>头像</td>
+			<td>Followers</td>
+			<td>Following</td>
+			<td>Location</td>
+		</th>
+		<tbody>
+			<% @users.each do |user| %>
+				<%= render :partial=>'single_user',:locals=>{:user=>user} %>
+			<% end %>
+		</tbody>
+	</table>
+</div>
