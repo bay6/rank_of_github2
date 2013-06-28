@@ -1,16 +1,20 @@
 tr
-	td
-
-	td
-		= user.name||user.login
-	td
-		= user.login
-	td
-		- url = user.avatar_url.nil?? asset_path('default_avatar.jpeg') : user.avatar_url
-		= image_tag url, :class=>"img-rounded",:width=>"80"
-	td
-		= user.followers
-	td 
-		= user.following
-	td 
-		= user.location||"此人外星人,Unknow location"
+  td.sort-id
+  
+  td
+    a href="https://github.com/#{ user.username }" blank="target" =(user.name ||user.login)
+  td
+    = user.login
+  td
+    = user.followers
+  td 
+    = user.following
+  td 
+    = user.location||"此人外星人,Unknow location"
+  td 
+    = user.language
+  td 
+    = user.contributes_score
+  td
+    - url = user.avatar_url.nil?? asset_path('default_avatar.jpeg') : user.avatar_url
+    = image_tag url, :class=>"img-rounded",:width=>"80"
