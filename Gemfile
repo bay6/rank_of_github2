@@ -18,7 +18,10 @@ gem "octokit"
 gem "nokogiri"
 gem "kaminari"
 gem "resque"
-gem 'pg', group: :production
+group :production do
+  gem 'pg' 
+  gem 'unicorn'
+end
 
 group :development, :test do 
   gem 'sqlite3'

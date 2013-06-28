@@ -1,5 +1,8 @@
 ##github成员贡献统计和排名
 
+##演示地址
+http://grank.herokuapp.com/
+
 ### Rank form two places
 
   * repos
