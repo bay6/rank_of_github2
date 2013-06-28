@@ -6,7 +6,8 @@ tr
 	td
 		= user.login
 	td
-		= image_tag user.avatar_url, :class=>"img-rounded",:width=>"80"
+		- url = user.avatar_url.nil?? asset_path('default_avatar.jpeg') : user.avatar_url
+		= image_tag url, :class=>"img-rounded",:width=>"80"
 	td
 		= user.followers
 	td 
