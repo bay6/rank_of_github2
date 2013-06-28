@@ -1,3 +1,4 @@
+require 'open-uri'
 class User < ActiveRecord::Base
    has_many :contributes
 
@@ -62,6 +63,10 @@ class User < ActiveRecord::Base
         end
         {user: user, commit_count: commit_count}
       end
+    end
+
+    def generate_client
+      @client = Octokit::Client.new(:login => "ken0", :password => "password9")
     end
 
 
