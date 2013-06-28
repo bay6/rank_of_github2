@@ -3,10 +3,7 @@ class User < ActiveRecord::Base
 
    # for 500 users
    def self.fetch_china_datas
-     @users = []
-     5.times do |page|
-       @users += search_users("location:china", page + 1)
-     end
+     @users = 5.times.collect { |page| search_users("location:china", page + 1) }.flatten
      save_users
    end
 
