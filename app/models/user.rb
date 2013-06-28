@@ -32,7 +32,8 @@ class User < ActiveRecord::Base
            location: user.location,
            language: user.language,
            username: user.username,
-           score: user.score 
+           score: user.score,
+           following: user.following
          }
          if exist_user
            exist_user.update_attributes! params
