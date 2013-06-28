@@ -62,7 +62,8 @@ class User < ActiveRecord::Base
 
      def search_users keyword=nil, page=1
        keyword ||= "followers:>0"
-       Octokit.search_users keyword, { sort: "followers", order: "desc", start_page: page, force_urlencoded: true } 
+       @client = Octokit::Client.new(:login => "ken0", :password => "password9")
+       @client.search_users keyword, { sort: "followers", order: "desc", start_page: page, force_urlencoded: true } 
      end
 
      #TODO for fetch and get all user's commit 
