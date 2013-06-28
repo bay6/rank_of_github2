@@ -11,6 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130627090144) do
+
+  create_table "contributes", :force => true do |t|
+    t.integer  "user_id"
+    t.float    "score"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "login"
+    t.integer  "followers"
+    t.integer  "following"
+    t.string   "avatar_url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "github_id"
+    t.string   "fullname"
+    t.string   "location"
+    t.string   "language"
+    t.string   "username"
+    t.float    "score"
+  end
 
 end
