@@ -2,7 +2,7 @@ tr
   td.sort-id
   
   td
-    = user.name ||user.login
+    a href="https://github.com/#{ user.username }" blank="target" =(user.name ||user.login)
   td
     = user.login
   td
