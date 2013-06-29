@@ -1,0 +1,22 @@
+div.container
+  table id='result' class="table table-bordered"
+    thead
+      th
+      th width="100" 姓名
+      th 帐号
+      th Followers
+      th Following
+      th width="120" Location
+      th language
+      th Contributes
+      th width="80" 头像
+    tbody
+      - @users.each do |user|
+        = render :partial=>'single_user',:locals=>{:user=>user}
+=javascript_include_tag "http://www.datatables.net/release-datatables/media/js/jquery.dataTables.js"
+=stylesheet_link_tag "http://www.datatables.net/release-datatables/media/css/demo_table.css"
+=stylesheet_link_tag "http://www.datatables.net/release-datatables/media/css/demo_page.css"
+javascript:
+  $(document).ready(function(){
+    $('#result').dataTable();
+  });
