@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
    has_many :contributes
 
    # for 1000 users
-   def self.fetch_china_datas
-     @users = 10.times.collect { |page| search_users("location:china", page + 1) }.flatten
+   def self.fetch_china_datas pages
+     @users = pages.send(:times).collect { |page| search_users("location:china", page + 1) }.flatten
      save_users
    end
 
@@ -57,7 +57,8 @@ class User < ActiveRecord::Base
        doc = Nokogiri::HTML open("https://github.com/#{ username }")
        contribute = doc.at(".contrib-day>.num").text.sub!(" Total", "")
        avatar_url = doc.at(".avatared img")["src"]
-       { contribute: contribute, avatar_url: avatar_url }
+       following = doc.css('ul.stats li').last.css('a strong').text 
+       { contribute: contribute, avatar_url: avatar_url, following: following }
      end
 
      def search_users keyword=nil, page=1

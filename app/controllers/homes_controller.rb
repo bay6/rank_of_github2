@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
 
   def index
-    @users = User.page(params[:page]).per(1000)
+    @users = User.page(params[:page]).per(20)
   end
 
 end
