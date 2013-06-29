@@ -55,9 +55,9 @@ class User < ActiveRecord::Base
 
      def more_datas username
        doc = Nokogiri::HTML open("https://github.com/#{ username }")
-       contribute = doc.at(".contrib-day>.num").text.sub!(" Total", "")
+       contribute = doc.at(".contrib-day>.num").text.sub!(" Total", "") rescue 0
        avatar_url = doc.at(".avatared img")["src"]
-       following = doc.css('ul.stats li').last.css('a strong').text 
+       following = doc.css('ul.stats li').last.css('a strong').text
        { contribute: contribute, avatar_url: avatar_url, following: following }
      end
 
