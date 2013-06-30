@@ -31,3 +31,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem "thin"
 end
+
+group :test do
+  gem 'rspec-rails'
+end
