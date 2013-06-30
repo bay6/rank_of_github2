@@ -6,6 +6,7 @@ gem 'rails', '3.2.13'
 gem 'slim'
 gem 'kaminari' #paginate
 gem 'bootstrap-sass'
+gem 'omniauth-github'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

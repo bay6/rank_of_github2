@@ -36,6 +36,11 @@ Devise.setup do |config|
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
   config.case_insensitive_keys = [ :email ]
+  if Rails.env.production?
+    config.omniauth :github, 'ee8c06288e9fce6bcf76', 'd40ec24fd81b3d1c97b82f497f0c4aec61376615'#ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  elsif Rails.env.development?
+    config.omniauth :github, 'c4fcb8f3b5333094a1b0', 'b75d90f7348a98c80a6e380db8e27c697f69a418'#ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
+  end
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
