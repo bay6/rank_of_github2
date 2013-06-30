@@ -18,6 +18,7 @@ gem "octokit"
 gem "nokogiri"
 gem "kaminari"
 gem "resque"
+gem 'devise'
 group :production do
   gem 'pg' 
   gem 'unicorn'
