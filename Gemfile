@@ -20,6 +20,7 @@ gem "nokogiri"
 gem "kaminari"
 gem "resque"
 gem 'devise'
+gem 'newrelic_rpm'
 group :production do
   gem 'pg' 
   gem 'unicorn'
