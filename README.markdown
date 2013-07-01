@@ -25,6 +25,5 @@ http://grank.herokuapp.com/
 
 成员:
 - [@williamherry](https://github.com/williamherry)
-- [@Chris](https://github.com/biorainy)
 - [@RyanZhu1024](https://github.com/RyanZhu1024)
 - [@mouseshi](https://github.com/mouse-lin)
