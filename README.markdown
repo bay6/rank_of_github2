@@ -1,7 +1,15 @@
-##github成员贡献统计和排名
+###github成员贡献统计和排名
 
-##演示地址
+###演示地址
 http://grank.herokuapp.com/
+
+### 使用说明
+
+本地测试github登录启动用
+
+```ruby
+bundle exec unicorn_rails -c config/unicorn.rb
+```
 
 ### Rank form two places
 
