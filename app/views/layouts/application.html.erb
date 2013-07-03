@@ -8,8 +8,6 @@
 </head>
 <body>
   <div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <a href="https://github.com/bay6/rank_of_github2"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
     <div id="user_header">
       <% if current_member %>
@@ -20,6 +18,9 @@
         <%= link_to "Sign Up", new_member_registration_path %> or
         <%= link_to "Log In", new_member_session_path %>
       <% end %>
+      <p><%= notice %></p>
+      <p><%= flash[:error] %></p>
+      <p><%= alert %></p>
     </div>
 
     <%= yield %>

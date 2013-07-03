@@ -12,7 +12,7 @@ class Member < ActiveRecord::Base
   def self.find_for_github_oauth(auth, signed_in_resource=nil)
     member = Member.where(:provider => auth.provider, :uid => auth.uid).first
     unless member
-      member = Member.create(name:auth.extra.raw_info.name,
+      member = Member.create(name:auth.extra.raw_info.login, # changed from name to login in case some one has no name 
                          provider:auth.provider,
                          uid:auth.uid,
                          email:auth.info.email,
