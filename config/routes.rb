@@ -1,4 +1,7 @@
 Rank::Application.routes.draw do
+  resources :commits
+
+
   resources :projects
 
 

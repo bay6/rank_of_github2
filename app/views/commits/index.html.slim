@@ -1,0 +1,33 @@
+h1 Listing commits
+
+table
+  tr
+    th Sha
+    th Html url
+    th Author
+    th Author login
+    th Author date
+    th Committer name
+    th Committer email
+    th Project
+    th
+    th
+    th
+
+  - @commits.each do |commit|
+    tr
+      td = commit.sha
+      td = commit.html_url
+      td = commit.author_id
+      td = commit.author_login
+      td = commit.author_date
+      td = commit.committer_name
+      td = commit.committer_email
+      td = commit.project_id
+      td = link_to 'Show', commit
+      td = link_to 'Edit', edit_commit_path(commit)
+      td = link_to 'Destroy', commit, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Commit', new_commit_path

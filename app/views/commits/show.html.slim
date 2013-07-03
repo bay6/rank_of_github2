@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Sha:
+  = @commit.sha
+p
+  strong Html url:
+  = @commit.html_url
+p
+  strong Author:
+  = @commit.author_id
+p
+  strong Author login:
+  = @commit.author_login
+p
+  strong Author date:
+  = @commit.author_date
+p
+  strong Committer name:
+  = @commit.committer_name
+p
+  strong Committer email:
+  = @commit.committer_email
+p
+  strong Project:
+  = @commit.project_id
+
+= link_to 'Edit', edit_commit_path(@commit)
+'|
+= link_to 'Back', commits_path

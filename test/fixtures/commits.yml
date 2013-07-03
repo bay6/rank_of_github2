@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sha: MyString
+  html_url: MyString
+  author_id: MyString
+  author_login: MyString
+  author_date: MyString
+  committer_name: MyString
+  committer_email: MyString
+  project_id: 1
+
+two:
+  sha: MyString
+  html_url: MyString
+  author_id: MyString
+  author_login: MyString
+  author_date: MyString
+  committer_name: MyString
+  committer_email: MyString
+  project_id: 1
