@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Uid:
+  = @project.uid
+p
+  strong Name:
+  = @project.name
+p
+  strong Description:
+  = @project.description
+p
+  strong Html url:
+  = @project.html_url
+p
+  strong Avatar url:
+  = @project.avatar_url
+p
+  strong Starred url:
+  = @project.starred_url
+
+= link_to 'Edit', edit_project_path(@project)
+'|
+= link_to 'Back', projects_path

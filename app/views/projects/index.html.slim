@@ -1,0 +1,29 @@
+h1 Listing projects
+
+table
+  tr
+    th Uid
+    th Name
+    th Description
+    th Html url
+    th Avatar url
+    th Starred url
+    th
+    th
+    th
+
+  - @projects.each do |project|
+    tr
+      td = project.uid
+      td = project.name
+      td = project.description
+      td = project.html_url
+      td = project.avatar_url
+      td = project.starred_url
+      td = link_to 'Show', project
+      td = link_to 'Edit', edit_project_path(project)
+      td = link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Project', new_project_path

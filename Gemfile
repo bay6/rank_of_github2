@@ -3,7 +3,7 @@ source "http://ruby.taobao.org/"
 
 gem 'rails', '3.2.13'
 
-gem 'slim'
+gem 'slim-rails'
 gem 'kaminari' #paginate
 gem 'bootstrap-sass'
 gem 'omniauth-github'
