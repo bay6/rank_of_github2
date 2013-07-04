@@ -13,6 +13,10 @@ bundle exec unicorn_rails -c config/unicorn.rb
 
 ### 报表设计
 
+1. 月周贡献值排行
+2. daily贡献变化
+3. 个人历史趋势变化
+
 ```
  {"Baichuan Li"=>2, "Capri2014"=>1, "Clark"=>9, "Hu Hao"=>9, "Ken"=>41, "Ken Lu"=>86, "Ryan Zhu"=>7, "RyanZhu1024"=>2, "William Herry"=>7, "baichuan"=>11, "caok"=>32, "kaku87"=>1, "mouseshi"=>18, "soffolk"=>1, "vincent178"=>70, "zhangyi2099"=>2}
  
