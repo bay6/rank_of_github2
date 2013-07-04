@@ -3,11 +3,12 @@ class CreateCommits < ActiveRecord::Migration
     create_table :commits do |t|
       t.string :sha
       t.string :html_url
-      t.string :author_id
-      t.string :author_login
       t.datetime :commit_date
       t.string :committer_name
       t.string :committer_email
+      t.datetime :author_date
+      t.string :author_name
+      t.string :author_email
       t.integer :project_id
 
       t.timestamps
