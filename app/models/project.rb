@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   attr_accessible :avatar_url, :description, :html_url, :name, :starred_url, :uid
+  has_many :commits
+
   def self.get_bay6_repos
     #FIXME should be DRY
     @client = Octokit::Client.new(:login => "ken0", :password => "password9")
@@ -7,7 +9,7 @@ class Project < ActiveRecord::Base
     brepos.each{|repo| self.create_or_update(repo)}
   end
 
-protected
+  protected
   def self.create_or_update repo
     proj = Project.find_or_create_by_uid(repo.id)
     proj.update_attributes(

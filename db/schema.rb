@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703125824) do
+ActiveRecord::Schema.define(:version => 20130703133633) do
+
+  create_table "commits", :force => true do |t|
+    t.string   "sha"
+    t.string   "html_url"
+    t.string   "author_id"
+    t.string   "author_login"
+    t.datetime "commit_date"
+    t.string   "committer_name"
+    t.string   "committer_email"
+    t.integer  "project_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "contributes", :force => true do |t|
     t.integer  "user_id"
