@@ -1,5 +1,10 @@
 module Github
 
+  def some_script
+    Commit.where('commit_date > :ten', ten: 10.days.ago).group("Date(commit_date)").count
+    Commit.where('commit_date > :ten', ten: 10.days.ago).group('author_name').count
+  end
+
   def self.all_repo
     @client.repos( 'bay6')
   end
