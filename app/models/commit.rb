@@ -4,8 +4,15 @@ class Commit < ActiveRecord::Base
 
   def self.get_commit_from repo
     @client = Octokit::Client.new(:login => "ken0", :password => "password9")
-    commits = @client.commits("#{repo.owner.login}/#{repo.name}")
-    commits.each{|commit| create_or_update(commit, repo)}
+    all_commits = []
+    commits = []
+    last_commit =  @client.commits("#{repo.owner.login}/#{repo.name}").first
+    begin
+      commits = @client.commits("#{repo.owner.login}/#{repo.name}", 'master', {per_page: 100, sha: last_commit.sha})
+      last_commit = commits.last
+      all_commits += commits
+    end unless commits.count < 100
+    all_commits.each{|commit| create_or_update(commit, repo)}
   end
 
   protected
