@@ -11,7 +11,7 @@ class Commit < ActiveRecord::Base
       commits = @client.commits("#{repo.owner.login}/#{repo.name}", 'master', {per_page: 100, sha: last_commit.sha})
       last_commit = commits.last
       all_commits += commits
-    end unless commits.count < 100
+    end until commits.count < 100
     all_commits.each{|commit| create_or_update(commit, repo)}
   end
 
