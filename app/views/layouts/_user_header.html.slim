@@ -1,0 +1,16 @@
+header.navbar-wrapper
+    div.container
+        - if current_member
+            | Logged in as 
+            span 
+                = current_member.email
+                = link_to " Log Out", destroy_member_session_path , :method => :delete
+        - else
+            ul.nav
+                li 
+                    = link_to "Sign in with github",member_omniauth_authorize_path(:github)
+                li
+                    = link_to "Sign up",new_member_registration_path
+                | or 
+                li
+                    = link_to "Log In",new_member_session_path
